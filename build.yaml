@@ -1,0 +1,5 @@
+post_process_builders:
+  deleterBuilder:
+    import: 'package:post_builders/builders.dart'
+    builder_factory: 'deleterBuilder'
+    input_extensions: [".save_wt.dart"]
