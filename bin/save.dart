@@ -11,9 +11,11 @@ import 'package:build_runner/build_runner.dart' as build_runner;
 import 'dart:io' as io;
 
 final _builders = <build_runner_core.BuilderApplication>[
-  build_runner_core.apply(r'welltested:save', [post_builders.saverBuilder],
+  build_runner_core.apply(r'post_builders:saver', [post_builders.saverBuilder],
       build_runner_core.toDependentsOf(r'post_builders'),
-      appliesBuilders: ['post_builders:'], hideOutput: true)
+      hideOutput: true),
+  build_runner_core.applyPostProcess(
+      r'post_builders:deleterBuilder', post_builders.deleterBuilder)
 ];
 Future<void> main(List<String> args) async {
   build_runner_core.overrideGeneratedOutputDirectory('save_cache');

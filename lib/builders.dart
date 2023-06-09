@@ -13,7 +13,7 @@ Builder saverBuilder(BuilderOptions options) {
       }));
 }
 
-PostProcessBuilder deleterBuilder = DeleterBuilder();
+PostProcessBuilder deleterBuilder(BuilderOptions options) => DeleterBuilder();
 
 class DeleterBuilder extends PostProcessBuilder {
   @override
